@@ -1,0 +1,16 @@
+services:
+  bendefestijn-db:
+    image: mysql:lts
+    container_name: bendefestijn-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: bendefestijn-db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

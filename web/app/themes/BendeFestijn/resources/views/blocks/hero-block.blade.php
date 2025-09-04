@@ -1,13 +1,27 @@
+@push('styles')
+  @vite(['resources/css/blocks/hero.scss'])
+@endpush
+
+@push('scripts')
+  @vite(['resources/js/blocks/hero.js'])
+@endpush
+
 <section class="hero-block">
-  <div class="slider">
-    @foreach ($data["slider_content"] as $slide)
-      {!! wp_get_attachment_image(
-            $slide,
-            'full',
-            false,
-            ['class' => 'slide-image']
-          ) !!}
-    @endforeach
+  <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+      <ul class="splide__list">
+        @foreach ($data["slider_content"] as $slide)
+          <li class="splide__slide">
+            {!! wp_get_attachment_image(
+                $slide,
+                'full',
+                false,
+                ['class' => 'slide-image']
+              ) !!}
+          </li>
+        @endforeach
+      </ul>
+    </div>
   </div>
 
   <div class="hero-content">

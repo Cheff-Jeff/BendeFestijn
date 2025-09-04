@@ -16,6 +16,8 @@ export default defineConfig({
         footerBuilderCss: 'resources/css/footer-builder.scss',
         footerBuilderJs: 'resources/js/footer-builder.js',
         loginCss: 'resources/css/login-admin.scss',
+        heroCss: 'resources/css/blocks/hero.scss',
+        heroJs: 'resources/js/blocks/hero.js',
       },
       refresh: true,
     }),

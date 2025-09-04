@@ -1,0 +1,43 @@
+@use './admin-variables' as *;
+
+#toplevel_page_crb_carbon_fields_container_algemene_instellingen {
+  a.toplevel_page_crb_carbon_fields_container_algemene_instellingen {
+    display: flex !important;
+
+    .wp-menu-image {
+      margin-top: auto;
+      margin-bottom: auto;
+      display: block;
+    }
+
+    .wp-menu-name {
+      padding-left: 8px;
+    }
+  }
+}
+
+.glablal-settings-editor-page {
+  .btn-error {
+    border-color: var(--trach-color);
+    color: var(--trach-color);
+
+    &:hover {
+      background: var(--trach-color);
+      color: var(--btn-bakground-black);
+    }
+  }
+}
+
+.algemene-instellingen_page_crb_carbon_fields_container_footer_blokken {
+  #major-publishing-actions {
+    #publish {
+      font-size: 15px;
+    }
+
+    .page-block-trigger {
+      display: block;
+      margin-left: auto;
+      margin-top: 15px;
+    }
+  }
+}

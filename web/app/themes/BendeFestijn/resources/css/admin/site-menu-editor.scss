@@ -1,0 +1,64 @@
+@use './buttons.scss' as *;
+
+.nav-menus-php {
+  .manage-menus {
+    border: none;
+    box-shadow: none;
+  }
+
+  #menu-settings-column {
+    box-shadow: 5px 5px 5px #ccc;
+
+    .accordion-container {
+      border: none;
+    }
+
+    .accordion-section {
+      border: none;
+    }
+
+    .control-section {
+      .accordion-section-title {
+        border: none;
+        background: #fff !important;
+      }
+    }
+
+    .button {
+      &.submit-add-to-menu {
+        @extend .button-primary;
+      }
+    }
+  }
+
+  #menu-management-liquid {
+    box-shadow: 5px 5px 5px #ccc;
+
+    .bulk-select-button {
+      display: none;
+    }
+
+    .menu-edit {
+      border: none;
+      box-shadow: none;
+    }
+
+    #post-body {
+      border-bottom: none;
+    }
+
+    #nav-menu-header,
+    #nav-menu-footer {
+      background: #fff;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  nav.nav-tab-wrapper,
+  #add-category,
+  a.page-title-action,
+  #add-post-type-post {
+    display: none;
+  }
+}

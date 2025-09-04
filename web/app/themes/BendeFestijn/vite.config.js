@@ -1,19 +1,22 @@
 import { defineConfig } from 'vite';
-import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin';
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
   base: '/app/themes/BendeFestijn/public/build/',
   plugins: [
-    tailwindcss(),
     laravel({
-      input: [
-        'resources/css/app.css',
-        'resources/js/app.js',
-        'resources/css/editor.css',
-        'resources/js/editor.js',
-      ],
+      input: {
+        appCss: 'resources/css/app.scss',
+        appJs: 'resources/js/app.js',
+        editorCss: 'resources/css/editor.scss',
+        editorJs: 'resources/js/editor.js',
+        pageBuilderCss: 'resources/css/page-builder.scss',
+        pageBuilderJs: 'resources/js/page-builder.js',
+        footerBuilderCss: 'resources/css/footer-builder.scss',
+        footerBuilderJs: 'resources/js/footer-builder.js',
+        loginCss: 'resources/css/login-admin.scss',
+      },
       refresh: true,
     }),
 
@@ -22,9 +25,9 @@ export default defineConfig({
     // Generate the theme.json file in the public/build/assets directory
     // based on the Tailwind config and the theme.json file from base theme folder
     wordpressThemeJson({
-      disableTailwindColors: false,
-      disableTailwindFonts: false,
-      disableTailwindFontSizes: false,
+      disableTailwindColors: true,
+      disableTailwindFonts: true,
+      disableTailwindFontSizes: true,
     }),
   ],
   resolve: {
@@ -33,6 +36,21 @@ export default defineConfig({
       '@styles': '/resources/css',
       '@fonts': '/resources/fonts',
       '@images': '/resources/images',
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        format: 'es',
+        entryFileNames: ({ name }) => {
+          return name === 'appCss' || name === 'editorCss'
+            ? `assets/[name].css`
+            : `assets/scripts/[name].js`;
+        },
+        assetFileNames: (assetInfo) => {
+          return 'assets/styles/' + assetInfo.name;
+        },
+      },
     },
   },
 });

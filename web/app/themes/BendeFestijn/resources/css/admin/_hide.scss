@@ -1,0 +1,43 @@
+.custom-block-modal {
+  display: none;
+}
+
+body.post-type-page #postdivrich,
+body.post-type-page #postimagediv,
+body.post-type-page #slugdiv,
+body.post-type-page #submitdiv,
+body.post-type-page #screen-meta,
+body.post-type-page #pageparentdiv,
+body.post-type-page .cf-title,
+body.post-type-page .wrap > h1,
+#wpfooter,
+#wp-admin-bar-new-content,
+#wp-admin-bar-view,
+#wp-admin-bar-comments {
+  display: none !important;
+}
+
+.postbox.carbon-box,
+.carbon-box .postbox-header,
+.cf-complex__group-head,
+.cf-complex__group-body,
+.cf-field.cf-complex.cf-complex--grid {
+  border: none !important;
+}
+
+.carbon-box .handle-actions,
+.cf-complex__toggler,
+.cf-complex__inserter-button,
+.cf-complex > .cf-field__head,
+.cf-field.cf-hidden > .cf-field__head,
+.cf-field.cf-hidden,
+.cf-complex__group-index,
+#contextual-help-link {
+  display: none !important;
+}
+
+#wpbody-content {
+  .page-title-action {
+    display: none !important;
+  }
+}

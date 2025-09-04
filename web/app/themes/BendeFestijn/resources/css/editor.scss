@@ -1,0 +1,310 @@
+@use './admin/_admin-variables.scss' as *;
+@use './admin/buttons.scss' as *;
+@use './admin/global-settings.scss' as *;
+@use './admin/site-menu-editor.scss' as *;
+
+.post-type-page {
+  .tablenav {
+    &.top {
+      display: none;
+    }
+    &.bottom {
+      display: none;
+    }
+  }
+
+  table.pages {
+    table-layout: auto !important;
+    width: 100%;
+    border-spacing: 0px 10px;
+    border: none !important;
+    box-shadow: none !important;
+
+    thead,
+    tfoot,
+    th.check-column,
+    td.column-author,
+    td.column-comments,
+    .row-actions {
+      display: none;
+    }
+
+    tr {
+      box-shadow: 3px 3px 5px #ccc;
+      background: #fff !important;
+      display: grid;
+      grid-template-columns: 80% 20%;
+      margin-bottom: 15px;
+
+      &.status-trash {
+        .page-builder-pageTable-icons {
+          .main {
+            display: none !important;
+          }
+          .alternet {
+            display: flex !important;
+          }
+        }
+      }
+    }
+
+    td.column-date {
+      width: inherit;
+      text-align: end;
+    }
+
+    td.column-custom_icons {
+      grid-column: span 2;
+
+      .page-builder-pageTable-icons {
+        width: 100%;
+
+        .main {
+          display: flex;
+          width: 100%;
+          justify-content: flex-start;
+          gap: 20px;
+        }
+
+        .alternet {
+          display: none;
+          width: 100%;
+          justify-content: flex-start;
+          gap: 20px;
+        }
+
+        .page-builder-pageTable-icon-link {
+          position: relative;
+
+          .tool-tip {
+            position: absolute;
+            top: -35px;
+            left: 10px;
+            width: 0px;
+            background: #555;
+            padding: 0px;
+            z-index: 1;
+            color: #fff;
+            border-radius: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all 0.2s ease-in-out;
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+            fill: #000;
+          }
+
+          &:last-child {
+            margin-left: auto;
+
+            .tool-tip {
+              left: auto;
+              right: 10px;
+            }
+          }
+
+          &:hover {
+            .tool-tip {
+              width: auto;
+              padding: 5px;
+              transition: all 0.2s ease-in-out;
+            }
+
+            svg {
+              fill: var(--action-hover);
+            }
+
+            &.delete svg {
+              fill: var(--trach-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// End Pages editor styles
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #fff;
+  color: #000;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+p {
+  color: #000;
+}
+
+// Admin menu styles
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu,
+#adminmenu .wp-submenu,
+#wpadminbar {
+  background: #000;
+}
+
+#menu-pages .menu-icon-page .wp-menu-image.dashicons-admin-page::before {
+  content: '\f0ac';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#menu-dashboard .menu-icon-dashboard .dashicons-before::before {
+  content: '\f624';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#menu-posts .menu-icon-post .dashicons-before::before {
+  content: '\f187';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#menu-media .menu-icon-media .dashicons-before::before {
+  content: '\f87c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#toplevel_page_nav-menus .toplevel_page_nav-menus .dashicons-before::before {
+  content: '\f14e';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#toplevel_page_algemene-instellingen
+  .toplevel_page_algemene-instellingen
+  .dashicons-before::before {
+  content: '\f1de';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#toplevel_page_algemene-instellingen
+  .toplevel_page_algemene-instellingen
+  .dashicons-before::before {
+  content: '\f1de';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#toplevel_page_themes .toplevel_page_themes .dashicons-before::before {
+  content: '\f55d';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#menu-plugins .menu-icon-plugins .dashicons-before::before {
+  content: '\f1e6';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#menu-users .menu-icon-users .dashicons-before::before {
+  content: '\f007';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#menu-settings .menu-icon-settings .dashicons-before::before {
+  content: '\f085';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #fff;
+}
+
+#custom_quick_links {
+  border: none;
+  box-shadow: 5px 5px 5px #ccc;
+
+  .postbox-header {
+    display: none;
+  }
+
+  .custom-dashboard-widget {
+    p {
+      font-size: 15px;
+    }
+
+    .dash-navigations {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+      padding-bottom: 15px;
+
+      .button {
+        box-shadow: 3px 3px 4px #888;
+      }
+    }
+  }
+}
+
+body.index-php {
+  #screen-meta-links {
+    display: none;
+  }
+}
+
+ul#adminmenu {
+  a.menu-top {
+    &.current,
+    &.wp-has-current-submenu {
+      cursor: pointer;
+      margin: 15px 0;
+      box-shadow: 0 8px 32px 0 rgb(31 38 135 / 50%);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      margin-right: 7px;
+      transition: all 0.2s ease-in-out;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  li.menu-top:hover {
+    background-color: unset;
+
+    a.menu-top {
+      box-shadow: 0 8px 32px 0 rgb(31 38 135 / 50%);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      margin-right: 7px;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+.post-php {
+  #poststuff {
+    #wp-content-editor-tools {
+      background-color: #fff;
+    }
+  }
+}

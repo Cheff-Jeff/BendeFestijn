@@ -1,0 +1,106 @@
+@use './admin/buttons.scss' as *;
+@use './admin/_hide.scss' as *;
+@use './admin/block-modal.scss' as *;
+@use './admin/_admin-variables.scss' as *;
+
+#poststuff {
+  #post-body {
+    .cf-complex__group {
+      margin-bottom: 30px !important;
+
+      &.cf-complex__group--grid {
+        box-shadow: var(--complex-grid-shadow);
+      }
+
+      .cf-complex__group-head {
+        .cf-complex__group-title {
+          font-size: 18px;
+          padding: 10px 15px;
+        }
+      }
+
+      .cf-complex__group-body {
+        background-color: var(--complex-background) !important;
+      }
+
+      .cf-field {
+        border: none !important;
+
+        &.cf-separator {
+          h3 {
+            font-size: 1.25em;
+            margin-bottom: -10px;
+          }
+        }
+      }
+
+      .dashicons-before {
+        &.dashicons-admin-page {
+          &.cf-complex__group-action-icon {
+            &::before {
+              content: '\f0ea';
+              font-family: 'Font Awesome 6 Free';
+              font-weight: 500;
+            }
+
+            &:hover {
+              color: var(--action-hover);
+            }
+          }
+        }
+
+        &.dashicons-trash {
+          &.cf-complex__group-action-icon {
+            &::before {
+              content: '\f2ed';
+              font-family: 'Font Awesome 6 Free';
+              font-weight: 500;
+            }
+
+            &:hover {
+              color: var(--trach-color);
+            }
+          }
+        }
+      }
+    }
+
+    .postbox {
+      box-shadow: none;
+
+      .postbox-header {
+        h2 {
+          font-size: 25px !important;
+        }
+      }
+
+      .cf-container {
+        .cf-field {
+          border: none;
+        }
+      }
+
+      .inside {
+        display: block !important;
+      }
+    }
+  }
+}
+
+.page-builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .page-builder-header__title {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .page-builder-header__button-group {
+    .button.button-primary {
+      margin-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@use './_admin-variables.scss' as *;
+
+.button.button-primary,
+.custom-block-content button.button,
+.button.button-secondary {
+  background: var(--btn-bakground-black);
+  border-radius: var(--btn-border-radius);
+  outline: none;
+  border: var(--btn-border);
+  display: inline-flex;
+  align-items: center;
+  color: var(--btn-text-white);
+}
+
+.button.button-secondary {
+  background: var(--btn-bakground-white);
+  color: var(--btn-text-black);
+}
+
+.button.button-primary svg,
+.button.button-secondary svg {
+  fill: var(--btn-icon-white);
+  width: var(--btn-icon-size);
+  height: var(--btn-icon-size);
+  margin: 0 10px 0 0;
+}
+
+.button.button-secondary svg {
+  fill: var(--btn-icon-black);
+}
+
+.button.button-primary span,
+.custom-block-content button.button,
+.button.button-secondary span {
+  font-size: var(--btn-font-size);
+}
+
+.button.button-primary:hover,
+.custom-block-content button.button:hover {
+  background: var(--btn-bakground-white);
+  color: var(--btn-text-black);
+}
+
+.button.button-primary:hover svg {
+  fill: var(--btn-icon-black);
+}
+
+.button.button-secondary:hover {
+  background: var(--btn-bakground-black);
+  color: var(--btn-text-white);
+}
+
+.button.button-secondary:hover svg {
+  fill: var(--btn-icon-white);
+}
+
+.edit-slug.button,
+.save.button,
+.cf-media-gallery__actions button.cf-media-gallery__browse,
+.cf-image button.cf-file__browse,
+.wrap a.page-title-action,
+.search-box .button {
+  background: var(--btn-bakground-black);
+  border-radius: 5px;
+  outline: none;
+  border: var(--btn-border);
+  display: inline-flex;
+  align-items: center;
+  color: var(--btn-text-white);
+
+  &:hover {
+    background: var(--btn-bakground-white);
+    color: var(--btn-text-black);
+  }
+}
+
+// .btn-as-input {
+//   font-size: var(--btn-font-size) !important;
+//   position: relative;
+
+//   &.publish-icon {
+//     padding-left: 40px;
+
+//     &::before {
+//       content: '\f06e';
+//       font-family: 'Font Awesome 6 Free';
+//       font-weight: 900;
+//     }
+//   }
+// }

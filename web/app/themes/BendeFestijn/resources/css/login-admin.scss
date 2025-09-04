@@ -1,0 +1,49 @@
+@use './admin/_admin-variables.scss' as *;
+@use './admin/buttons.scss' as *;
+
+body.login {
+  background: url('../images/wp-background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+
+  #login {
+    background: #fbfbfb75;
+    box-shadow: 1px 1px 10px 16px #fbfbfb75;
+    backdrop-filter: blur(3px);
+    padding: 30px 30px;
+    border-radius: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+
+    #loginform,
+    #lostpasswordform {
+      background: none;
+      border: none;
+      box-shadow: none;
+      color: black;
+
+      .wp-hide-pw {
+        &:hover {
+          color: var(--action-hover);
+        }
+
+        span {
+          font-size: 25px;
+          top: 0rem;
+        }
+      }
+    }
+
+    p,
+    a {
+      color: black;
+    }
+  }
+
+  .language-switcher {
+    display: none;
+  }
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\ThemeFunctions\Theme;
 use Roots\Acorn\Application;
 
 /*
@@ -58,3 +59,14 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+/*
+|--------------------------------------------------------------------------
+| Initiate theme custemizationsl
+|--------------------------------------------------------------------------
+|
+*/
+
+$theme = new Theme;
+$theme->init();
+  

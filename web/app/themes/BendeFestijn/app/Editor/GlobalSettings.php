@@ -16,7 +16,7 @@ class GlobalSettings
         $this->AddPageBuilderAssets();
     }
 
-    private function AddGlobalSettings(): Container
+    private function AddGlobalSettings(): Container\Theme_Options_Container
     {
         $settings = Container::make('theme_options', 'Algemene Instellingen')
             ->set_page_menu_title('Algemene Instellingen')

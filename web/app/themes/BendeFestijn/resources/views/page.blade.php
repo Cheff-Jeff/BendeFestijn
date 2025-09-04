@@ -1,8 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-  @while(have_posts()) @php(the_post())
-    @include('partials.page-header')
-    @includeFirst(['partials.content-page', 'partials.content'])
-  @endwhile
+  @php($blocks = carbon_get_post_meta(get_the_ID(), 'page_blocks'))
+
+  @if($blocks && is_array($blocks))
+    @foreach($blocks as $block)
+      @switch($block["_type"])
+        @case("hero")
+          @include('blocks.hero-block', ['data' => $block])
+          @break
+        
+        {{-- @case("text_media")
+          @include('blocks.text_media', ['data' => $block])
+          @break --}}
+        
+        @default
+          @break  
+      @endswitch
+    @endforeach
+  @endif
 @endsection

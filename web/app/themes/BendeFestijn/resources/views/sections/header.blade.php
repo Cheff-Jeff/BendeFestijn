@@ -8,4 +8,9 @@
       {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
     </nav>
   @endif
+
+  @php $logo = get_option('site_logo'); @endphp
+  @if ($logo)
+    <img src="{{ $logo }}" alt="Logo" class="h-12">
+  @endif
 </header>
